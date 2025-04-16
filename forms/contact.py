@@ -1,11 +1,10 @@
 import streamlit as st
 import re
 import requests
-import os
-from dotenv import load_dotenv
 
-load_dotenv()
-WEBHOOK_URL = os.getenv("WEBHOOK_URL")
+
+
+WEBHOOK_URL = st.secrets["WEBHOOK_URL"]
 
 def is_valid_email(email):
     email_pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
